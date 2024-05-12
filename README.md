@@ -12,8 +12,9 @@ Prerequisites:
 
 -------------------------------------------------------------------
  Visual Studio Community 2019 or later! <br> 
- SQLServer 2019 or later! <br>
+ SQLServer 2019 with (SQLSMS) or later! <br>
  VSCode to run in Terminal (optional) you can use CMD as well.
+ 
 -------------------------------------------------------------------
 
  
