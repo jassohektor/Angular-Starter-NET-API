@@ -19,7 +19,7 @@ Prerequisites:
 
  
 * Let's start from the beginning, take a look to the attached DB script and remember to create your empty database before to run it, I made this script to create the business model very basic to start your app, run that script in your database and results should match below screenshot.
-![image](https://github.com/jassohektor/Angular-Starter-NET-API/assets/168608755/2d9f9e91-8061-4e2d-b0ba-74d0da4a969d)
+![image](https://github.com/jassohektor/Angular-Starter-NET-API-SQLDB/assets/168608755/b4e4563d-aab3-4c32-b0aa-0087b89b4244)
 
 
 * Open the VS solution to load up both projects but change the startup project to target the "Web.Api" only and remember to update the appsettings.json schema with your server settings like Server name, Catalog, User and password, there is using my local database and the app won't work if you don't change that which is pretty obvious but just wanted to point it out. 
