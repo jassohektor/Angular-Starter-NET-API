@@ -49,8 +49,8 @@ Prerequisites:
 ![image](https://github.com/jassohektor/Angular-Starter-NET-API/assets/168608755/4822acab-34be-4feb-b6c1-4336fd44ba4b)
 
 
-**Notes**
+**Notes**<br>
 This repository covers what you may call a fullstack development to get started with your own project on both the frontend and backend scenarios, however if you take a look to the code, architecture and design you will found a pretty singular way to handle some features to get expected results and how I come up with some nice ideas to give shape and logic to tricky actions users have to interact with. At the end of the day we are creative souls always pushing forward to the future along with new technologies coming out every year and new ways to implement solutions to real life needs.
 
-**Fun Fact and a bit of gossip**<br>
+**Fun fact and a bit of gossip**<br>
 Is a bit funny that in my current job I had to take over a project made by a team from India and they grabbed such starter project from a hackathon event back in the day and feels kind of strange because they got fired due the lack of understanding the scope of the project with client needs and also how to provide good results to the business model which is pretty specific when it comes to create design and logic to scale backend workloads across multiple services. The client was very disappointed after fire other 2 teams and some "senior" developers until I came to the rescue and I have almost 5 years working here since then!
