@@ -1,0 +1,60 @@
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+textarea {
+    resize: none;
+}
+
+mat-selection-list {
+    border-radius: 5px;
+    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.2);
+    border: 1px solid #7ea8ad;
+    width: 100%;
+    height: 80%;
+}
+
+mat-form-field{
+    max-width: 200px;
+    font: normal 14px Calibri !important;
+}
+
+mat-list-option, mat-select, mat-option, mat-radio-button {
+    font: normal 12px Calibri !important;
+}
+
+form { 
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+.input-container {
+    font: 14px 'Calibri', sans-serif;
+    padding: 0% 15px 0% 15px; 
+    border: 1px solid lightblue;
+    border-radius: 30px;
+    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.2);
+}
+
+.row{
+    padding-top: 10px;
+}
+
+.button-container {
+    padding: 0% 15px 0% 15px; 
+    width: 100%;
+}
+
+.button-container>button{
+    float: right;
+    margin-right: 5px;
+    margin-top: -10px;
+}
+
+.user-profile-ID {
+    text-align: left; 
+    font-size: 10px;
+}

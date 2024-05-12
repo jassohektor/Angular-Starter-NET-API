@@ -1,0 +1,88 @@
+<nav>
+    <ul class="nav">
+        <li class="nav-item">
+            <div class="panel" style="font: normal 16px">
+                <div class="d-flex" style="text-align: center; margin-left: 20px;">
+                    <div class="menu-avatar" [ngStyle]="{'background-image': 'url(' + (user.PhotoUrl ? user.PhotoUrl : './assets/unknown.png') + ')'}"></div>
+                    <p class="personal-info">{{user.FirstName}} {{user.LastName}}
+                        <br>
+                        <span>{{user.Points | number}} Points</span>
+                        <br>
+                        <span>{{user.Address}} </span>
+                    </p>
+                </div>
+            </div>
+        </li>
+        <li class="nav-item"><!--[class.selected-section]="section('dashboard')"-->
+            <a #navDashboard class="nav-link" [routerLink]="'/dashboard'" (mouseover)="overSE(navDashboard,'dashboard');" (mouseout)="overSE(navDashboard,'dashboard', true);">
+                <div class="row">
+                    <div class="col col-icon">
+                        <i class="material-icons" [ngStyle]="{'color': consts.APP_COLORS.BROWN}">stars</i>
+                    </div>
+                    <div class="col">
+                        <div class="col-text">Table + CRUD operations</div>
+                    </div>
+                </div>
+            </a>
+        </li>
+        <li class="nav-item"><!--[class.selected-section]="section('users')"-->
+            <a #navUsers class="nav-link" [routerLink]="'/users'" (mouseover)="overSE(navUsers,'users');" (mouseout)="overSE(navUsers,'users', true);">
+                <div class="row">
+                    <div class="col col-icon">
+                        <i class="material-icons" [ngStyle]="{'color': consts.APP_COLORS.GRAY}">policy</i>
+                    </div>
+                    <div class="col">
+                        <div class="col-text">Form + Inputs</div>
+                    </div>
+                    <span class="event-count" *ngIf="expiringContent > 0">{{expiringContent}}</span>
+                </div>
+            </a>
+        </li>
+        <hr>
+        <li class="nav-item"><!--[class.selected-section]="section('gallery')"-->
+            <a #navGallery class="nav-link" [routerLink]="'/gallery'" (mouseover)="overSE(navGallery,'gallery');" (mouseout)="overSE(navGallery,'gallery', true);">
+                <div class="row">
+                    <div class="col col-icon">
+                        <i class="material-icons" [ngStyle]="{'color': consts.APP_COLORS.BLUE}">move_to_inbox</i>
+                    </div>
+                    <div class="col">
+                        <div class="col-text">Upload Image + Gallery</div>
+                    </div>
+                </div>
+            </a>
+        </li>
+        <hr>
+        <li class="nav-item"><!--not-active-->
+            <a #navDialog class="nav-link link-cursor" (click)="openDialog();" (mouseover)="overSE(navDialog);" (mouseout)="overSE(navDialog,'', true);">
+                <div class="row">
+                    <div class="col col-icon">
+                        <i class="material-icons" [ngStyle]="{'color': consts.APP_COLORS.ORANGE}">info</i>
+                    </div>
+                    <div class="col">
+                        <div class="col-text">About</div>
+                    </div>
+                </div>
+                <app-about #aboutComponent></app-about>
+            </a>
+        </li>
+        <hr>
+        <li class="nav-item">
+            <a #navLogOut class="nav-link link-cursor" (click)="logout();" (mouseover)="overSE(navLogOut);" (mouseout)="overSE(navLogOut,'', true);">
+                <div class="row">
+                    <div class="col col-icon">
+                        <i class="material-icons">exit_to_app</i>
+                    </div>
+                    <div class="col">
+                        <div class="col-text">Sign Out</div>
+                    </div>
+                </div>
+            </a>
+        </li>
+        <hr>
+    </ul>
+</nav>
+<div class="copy-rights">
+    <span style="float: right; margin-top: 20px;">
+        Veröld &copy; 2024
+    </span>
+</div>

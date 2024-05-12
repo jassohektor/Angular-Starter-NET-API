@@ -1,0 +1,12 @@
+<app-header></app-header>
+<mat-sidenav-container [ngStyle]="{'min-height': menuIsOpen && containerHeight, 'margin-top': '70px'}">
+  <!--(openedChange)="menuCloseEvent($event)"-->
+  <mat-sidenav #sideNav [mode]="mode.value" class="menuNavWrapper bd-toc-item"><!--[opened]="(menu$ | async)?.isOpen"-->
+    <app-menu [expiringContent]="10" *ngIf="!isAdminLayout"></app-menu>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <main role="main" class="col py-3 bd-content main-content-overflow">
+      <router-outlet></router-outlet>
+    </main>
+  </mat-sidenav-content>
+</mat-sidenav-container>

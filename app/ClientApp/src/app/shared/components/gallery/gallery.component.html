@@ -1,0 +1,63 @@
+<div class="gallery-content">
+    <div *ngIf="showGallery">
+        <mat-card style="width:100%; height: 210px;">
+            <mat-card-content>
+                <ngx-gallery #ngxGallery
+                    [images]="galleryImages" 
+                    [options]="galleryOptions">
+                </ngx-gallery>
+            </mat-card-content>
+        </mat-card>
+        <div class="button-container" style="float: right;padding-top: 17px;">
+            <button mat-fab style="color: white; background-color: #97052E;" aria-label="Delete Record" (click)="deleteItems()">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </div>
+    </div>
+</div>
+<!--<mat-spinner *ngIf="!showGallery"></mat-spinner>-->
+<div style="text-align:center;">
+    <app-file-upload (complete)="onFileComplete($event)"></app-file-upload>
+</div>
+<form [formGroup]="inputForm">
+    <div class="row">
+        <div class="col" style="min-width: 90%;">
+            <mat-form-field style="width: 100%;" appearance="fill">
+                <mat-label>Server Path:</mat-label>
+                <input #inputServerPath matInput maxlength="250" placeholder="c:/your-path/selected-folder/images.*" formControlName="ServerPath" [formControl]="spath"/>
+                <mat-hint align="start">The <strong>Server Path</strong> does reference to your local folder to store images, make sure it has writing permissions and this path must be inside your Angular app, so you need to update it to point out: <strong>"C:\your-path\app\ClientApp\src\assets\store\"</strong>.</mat-hint>
+                <mat-hint align="end">{{inputServerPath.value?.length || 0}}/250</mat-hint>
+            </mat-form-field>
+        </div>
+        <div class="col">
+            <button style="float: right;" mat-fab color="primary" aria-label="Save" (click)="onPathChange()" [disabled]="inputForm.pristine || inputForm.invalid">
+                <mat-icon>save</mat-icon>
+            </button>
+        </div>
+    </div>
+    <br/>
+    <div class="row">
+        <div class="col" style="min-width: 90%;">
+            <mat-form-field style="width: 100%;" appearance="fill">
+                <mat-label>Virtual Path:</mat-label>
+                <input #inputLocalPath matInput maxlength="50" placeholder="http://localhost:4200/selected-folder/images.*" formControlName="LocalPath" [formControl]="vpath"/>
+                <mat-hint align="start">The <strong>Virtual Path</strong> must be relative, taking as reference <strong>"./"</strong> or  <strong>"http://localhost:4200/"</strong> as virtual directory, in this case we need to simulate a server and consume files from above virtual path to push images using this address</mat-hint>
+                <mat-hint align="end">{{inputLocalPath.value?.length || 0}}/50</mat-hint>
+            </mat-form-field>
+        </div>
+        <div class="col"></div>
+    </div>
+</form>
+<br/>
+<div class="row gallery-description">
+    <p style="padding-left: 20px;">Notes:</p>
+    <ul>
+        <li>
+            This <strong>process</strong> is, every time you upload any image, you <strong>must</strong> go to your Angular code and press <strong>[ CTRL + S  or command + S]</strong>, no matter if you didn't do any change, this workaround is because we are not using a server here to store images and Angular needs update itself to refresh it's content for uploaded files to recognize them and this way we can <strong>simulate a server</strong> to host images.
+        </li>
+        <br>
+        <li>
+            <strong>Description: </strong> The reason I did it this way is because<strong> apps hosted locally don't have access to physical paths</strong> outside it's environment and I had to simulate an http upload process here <strong>within the virtual directory</strong> and is getting the image from the relative path which Angular needs to acknowledge every pushed image to use it.
+        </li>
+    </ul>
+</div>

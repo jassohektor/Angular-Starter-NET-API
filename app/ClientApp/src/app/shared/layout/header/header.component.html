@@ -1,0 +1,26 @@
+<div class="fixed-top" style="width:100%;padding: 0%;">
+  <nav class="navbar navbar-dark p-0">
+    <header class="header-bg col" style="max-height: 70px;">
+      <div class="row">
+        <div class="col" style="max-width: 70px;">
+          <button #bttnNav class="btn btn-link" type="button" (click)="toggleMenu('toggle')" style="padding-top: 20px;margin-left: -15px;"
+            aria-controls="bd-docs-nav" aria-expanded="false" aria-label="Toggle docs navigation">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 40" width="40" height="40" focusable="false">
+              <title>Menu</title>
+              <path stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" d="M4 7h22M4 15h22M4 23h22"></path>
+            </svg>
+          </button>
+        </div>
+        <div class="col">
+          <div class="row">
+            <span class="company">Veröld App</span>
+            <div class="logo-block">
+              <img src="./assets/home.png" class="logo" (click)="gotoHome()" />
+            </div>
+          </div>
+        </div>
+        <app-search style="margin-right: 5px;padding-top: 5px;"></app-search>
+      </div>
+    </header>
+  </nav>
+</div>

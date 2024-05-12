@@ -1,0 +1,35 @@
+.mat-sidenav-container, .mat-sidenav-content, .mat-tab-body-content {
+    transform: none !important;
+}
+
+.ngx-gallery-thumbnail.ngx-gallery-active {  
+    border: 2px solid steelblue;
+}
+
+.gallery-content{
+    width:100%; 
+    min-height: 245px; 
+    background: #7ea8ad;
+    background: url('../../../../assets/store/picture.png');
+    background-position-y: center;
+    background-position-x: center;
+    background-repeat: no-repeat;
+    background-size: 250px;
+}
+
+ngx-gallery.ngx-gallery-arrow {
+    border: 2px solid steelblue;
+}
+
+mat-card-content{
+    width:100%; height: 100%;
+}
+
+.ngx-gallery-close{
+    margin-top: 100px !important;
+    margin-right: 50px !important;
+}
+
+.gallery-description {
+    font: normal 14px Calibri; padding-right: 20px;
+}

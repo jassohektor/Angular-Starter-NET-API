@@ -1,0 +1,126 @@
+<div class="mat-elevation-z8" [hidden]="!dataSource">
+  <h4 style="text-align: center;">Property</h4>
+
+  <div class="container">
+    <div class="row" style="width: 100%;">
+      <div class="col" style="width: 50% !important;">
+        <mat-form-field style="padding-left: 10px;font-size: 20px;">
+          <mat-label>Filter</mat-label>
+          <input matInput (keyup)="applyFilter($event)" placeholder="Lookup for property/description...">
+        </mat-form-field>
+      </div>
+      <div class="col" style="width: 50% !important;">
+        <div style="float: right;">
+          <mat-form-field style="width: 150px !important;" appearance="fill">
+            <mat-label style="font:10px;">Start Date</mat-label>
+            <input #inputFechaInicial matInput [matDatepicker]="pickerInicial" readonly>
+            <mat-datepicker-toggle matSuffix [for]="pickerInicial"></mat-datepicker-toggle>
+            <mat-datepicker #pickerInicial></mat-datepicker>
+          </mat-form-field>
+          <mat-form-field style="width:150px !important; padding:0px 5px 0px 5px;" appearance="fill">
+            <mat-label style="font:10px;">End Date</mat-label>
+            <input #inputFechaFinal matInput [matDatepicker]="pickerFinal" readonly>
+            <mat-datepicker-toggle matSuffix [for]="pickerFinal"></mat-datepicker-toggle>
+            <mat-datepicker #pickerFinal></mat-datepicker>
+          </mat-form-field>  
+          <button mat-button class="button-list">
+            <mat-icon style="color: d82e20ff;" matSuffix>search</mat-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <mat-table [dataSource]="dataSource" matSort>
+    <!-- Column -->
+    <ng-container matColumnDef="Id">
+      <mat-header-cell *matHeaderCellDef> ID </mat-header-cell>
+      <mat-cell *matCellDef="let row">{{row.Id}}</mat-cell>
+    </ng-container>
+    <!-- Column -->
+    <ng-container matColumnDef="Property">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>&nbsp;&nbsp;&nbsp;Property</mat-header-cell>
+      <mat-cell *matCellDef="let row; let i = index"><!--id="input-{{i}}"-->
+        <input [(ngModel)]="row.Property" 
+        [class.row-lock]="!isReadOnly(row.Id)"
+        [disabled]="!isReadOnly(row.Id)" type="text"
+          class="form-control"  style="max-width: 350px;padding-right: 20px;"  value="{{row.Property}}">
+      </mat-cell>
+    </ng-container>
+    <!-- Column -->
+    <ng-container matColumnDef="Description">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Description</mat-header-cell>
+      <mat-cell *matCellDef="let row">
+      <input [(ngModel)]="row.Description" 
+      [class.row-lock]="!isReadOnly(row.Id)" [disabled]="!isReadOnly(row.Id)" type="text"
+          class="form-control"  style="max-width: 350px;padding-left: 20px;padding-right: 20px;"  value="{{row.Description}}">
+      </mat-cell>
+    </ng-container>
+    <!-- Column -->
+    <ng-container matColumnDef="CreatedDate">
+      <mat-header-cell *matHeaderCellDef>Date</mat-header-cell>
+      <mat-cell *matCellDef="let row">
+        {{(row.UpdatedDate)? (row.UpdatedDate | date:'MM/dd/yyyy') : (row.CreatedDate | date:'MM/dd/yyyy')}}
+      </mat-cell>
+    </ng-container>
+    <!-- Column -->
+    <ng-container matColumnDef="Active">
+      <mat-header-cell *matHeaderCellDef>Location</mat-header-cell>
+      <mat-cell *matCellDef="let row"> 
+        <mat-form-field>
+          <mat-select [(value)]="row.LocationId" 
+          [class.row-lock]="!isReadOnly(row.Id)"
+          [disabled]="!isReadOnly(row.Id)">
+            <mat-option *ngFor="let item of Locations" [value]="item.Id">{{item.Address}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </mat-cell>
+    </ng-container>
+    <!-- Column -->
+    <ng-container matColumnDef="Actions">
+      <mat-header-cell *matHeaderCellDef>
+        <div class="rounded-button" matRipple [matRippleTrigger]="clickEvt" [matRippleCentered] = "true" [matRippleRadius] = "25">
+          <i #clickEvt class="ripple-element" (click)="createItem()">
+            <!--
+            <svg xmlns="http://www.w3.org/2000/svg" height="40" width="40" viewBox="0 0 24 24">
+              <path fill="none" d="M0 0h24v24H0z"/>
+              <path fill="#5FB404" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/>
+            </svg>
+            -->
+            <img src="../../../../assets/add.png" style="width: 39px; height: 39px;"/>
+          </i>
+        </div>
+      </mat-header-cell>
+      <mat-cell *matCellDef="let row">
+        <table style="margin-left: 20px; width: 65px;">
+          <tr>
+            <td class="rounded-button" style="margin-right:5px;" matRipple [matRippleCentered] = "true" [matRippleRadius] = "30">
+              <i *ngIf="!isReadOnly(row.Id)" (click)="editElement(row.Id)">
+                <img src="../../../../assets/edit.png" style="width: 35px; height: 35px;"/>
+              </i>
+              <i *ngIf="isReadOnly(row.Id)" (click)="updateItem(row)">
+                <img src="../../../../assets/update.png" style="width: 35px; height: 35px;"/>
+              </i>
+            </td>
+            <td class="rounded-button" matRipple [matRippleCentered] = "true" [matRippleRadius] = "30">
+              <i (click)="deleteItem(row.Id)">
+                <img src="../../../../assets/delete.png" style="width: 35px; height: 35px;"/>
+                <!--
+                <div style="font-size: 36px;">
+                  <mat-icon [inline]="true" style="color: #DF013A;">delete</mat-icon>
+                </div>
+                -->
+              </i>
+            </td>
+          </tr>
+        </table>
+      </mat-cell>
+    </ng-container>
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" showFirstLastButtons></mat-paginator>
+</div>
+<div *ngIf="!dataSource">
+  <mat-spinner></mat-spinner>
+</div>

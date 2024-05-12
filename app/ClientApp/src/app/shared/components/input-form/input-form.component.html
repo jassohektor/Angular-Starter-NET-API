@@ -1,0 +1,161 @@
+<mat-card-content [hidden]="!selectedEntity">
+  <h5 style="text-align: center;">Update Users</h5>
+  <form [formGroup]="inputForm" class="input-container">
+    <div class="row">
+      <div class="col" style="min-width:70% !important">
+        <div class="row">
+          <div class="col">
+            <mat-form-field hintLabel="Max 250 characters" appearance="fill">
+              <mat-label>First Name:</mat-label>
+              <input #inputFirstName matInput formControlName="FirstName" placeholder="E.g. Hector" [formControl]="text" required>
+              <mat-error *ngIf="text.invalid">{{getErrorMessage('text')}}</mat-error>
+              <mat-hint  *ngIf="!text.invalid" align="end">{{inputFirstName.value?.length || 0}}/250</mat-hint>
+            </mat-form-field>
+          </div>
+          <div class="col">
+            <mat-form-field hintLabel="Max 250 characters" appearance="fill">
+              <mat-label>Last Name:</mat-label>
+              <input #inputLastName matInput ngDefaultControl formControlName="LastName" maxlength="250" placeholder="E.g. Jasso">
+              <mat-hint align="end">{{inputLastName.value?.length || 0}}/250</mat-hint>
+            </mat-form-field>
+          </div>
+        </div>
+    
+        <div class="row">
+          <div class="col">
+            <mat-form-field appearance="fill">
+              <mat-label>Gender</mat-label>
+              <mat-select #dropDown ngDefaultControl formControlName="Gender" [formControl]="dropdown" required>
+                <mat-option value="M">Male</mat-option>
+                <mat-option value="F">Female</mat-option>
+              </mat-select>
+              <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
+              <mat-error *ngIf="dropdown.invalid">{{getErrorMessage('dropdown')}}</mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col">
+            <mat-form-field hintLabel="Max 50 characters" appearance="fill">
+              <mat-label>Title:</mat-label>
+              <input #inputTitle matInput ngDefaultControl formControlName="Title" maxlength="50" placeholder="E.g. Full-stack Dev">
+              <mat-hint align="end">{{inputTitle.value?.length || 0}}/50</mat-hint>
+            </mat-form-field>
+          </div> 
+        </div>
+    
+        <div class="row">
+          <div class="col">
+            <mat-form-field hintLabel="Max 100 characters" appearance="fill">
+              <mat-label>Alias / User Name:</mat-label>
+              <input #inputAlias matInput ngDefaultControl formControlName="Alias" maxlength="100" placeholder="E.g. Sexy Raccoon">
+              <mat-hint align="end">{{inputAlias.value?.length || 0}}/100</mat-hint>
+            </mat-form-field>
+          </div>
+          <div class="col">
+            <mat-form-field appearance="fill">
+              <mat-label>Enter your email</mat-label>
+              <input #inputEmail matInput ngDefaultControl formControlName="Email" placeholder="abc123@corp.com" [formControl]="email" required>
+              <mat-error *ngIf="email.invalid">{{getErrorMessage('email')}}</mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+    
+        <div class="row">
+          <div class="col">
+            <mat-form-field hintLabel="Max 12 characters" appearance="fill">
+              <mat-label>ZipCode:</mat-label>
+              <input #inputZipCode matInput ngDefaultControl formControlName="ZipCode" maxlength="12" placeholder="E.g. 201">
+              <mat-hint align="end">{{inputZipCode.value?.length || 0}}/12</mat-hint>
+            </mat-form-field>
+          </div>
+          <div class="col">
+            <mat-form-field appearance="fill">
+              <mat-label>BirthDate</mat-label>
+              <input #inputBirthDate matInput ngDefaultControl [matDatepicker]="picker" formControlName="BirthDate" readonly>
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+          </div>
+        </div>
+    
+        <div class="row">
+          <div class="col">
+            <mat-form-field appearance="fill">
+              <mat-label>Phone number</mat-label>
+              <input #inputPhone matInput ngDefaultControl formControlName="Phone" [type]="'text'">
+              <mat-icon matSuffix>phone</mat-icon>
+              <mat-hint *ngIf="!phone.invalid">Include area code</mat-hint>
+              <mat-error *ngIf="phone.invalid">{{getErrorMessage('phone')}}</mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col">
+            <mat-form-field style="width: 100%;" appearance="fill">
+              <mat-label>Address:</mat-label>
+              <input #inputAddress matInput ngDefaultControl formControlName="Address" maxlength="500" placeholder="E.g. Sunnusmári #, Kópavogur">
+              <mat-hint align="end">{{inputAddress.value?.length || 0}}/500</mat-hint>
+            </mat-form-field>
+          </div>
+        </div> 
+    
+        <div class="row">
+          <div class="col">
+            <mat-form-field appearance="fill">
+              <mat-label>Enter your password</mat-label>
+              <input #inputPassword matInput ngDefaultControl formControlName="Password" [type]="hide ? 'password' : 'text'" [formControl]="password" required>
+              <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </button>
+              <mat-error *ngIf="password.invalid">{{getErrorMessage('password')}}</mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col">
+            <mat-radio-group aria-label="Select an Role">
+              <mat-radio-button value="1" [disabled]="true" [checked]="true">Admin</mat-radio-button>
+              <mat-radio-button value="2" [disabled]="true" style="margin-left: 20px;">User</mat-radio-button>
+            </mat-radio-group>
+          </div>
+        </div>
+
+        <div class="row">
+          <mat-form-field style="padding: 0% 30px 0% 14px; min-width: 100%;" appearance="fill">
+            <mat-label>Description</mat-label>
+            <textarea #inputDescription ngDefaultControl matInput formControlName="Description"></textarea>
+          </mat-form-field>
+        </div>
+        
+      </div>
+      <div class="col" style="padding-top: 10px; padding-right: 20px;">
+        <mat-selection-list #userList [multiple]="true" style="overflow-y: scroll;">
+          <mat-list-option *ngFor="let item of users" [value]="item.Id" style="border-bottom: 1px solid #7ea8ad;">
+            {{item.FirstName + ' ' + ((item.LastName)?item.LastName:'')}} / Admin
+          </mat-list-option>
+        </mat-selection-list>
+
+        <div class="row user-profile-ID">
+          <div class="col" style="max-width:20px !important;">
+            <mat-icon>assignment_ind</mat-icon>
+          </div>
+          <div class="col">
+            <div style="margin-top:5px;">{{ handleInput(userList.selectedOptions.selected) }}</div>
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="button-container">
+            <button #bttnSave mat-fab color="primary" aria-label="Save Record" (click)="updateEntity()" [disabled]="inputForm.pristine || inProgress">
+              <mat-icon>save</mat-icon>
+            </button>
+            <button mat-fab color="warn" aria-label="Delete Record" (click)="deleteEntity()" [disabled]="selectedEntity.Id == null || users.length == 1 || inProgress">
+              <mat-icon>delete</mat-icon>
+            </button>
+            <button mat-fab style="background:#8FBC8F; color: #FFFFFF;" aria-label="New Record" (click)="newEntity()" [disabled]="!bttnSave.disabled || inProgress">
+              <mat-icon>person_add</mat-icon>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+</form>
+</mat-card-content>
+<div *ngIf="!selectedEntity">
+  <mat-spinner></mat-spinner>
+</div>

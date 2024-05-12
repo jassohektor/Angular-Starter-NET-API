@@ -1,0 +1,30 @@
+<div class="main-div">
+    <mat-card [ngClass]="errorMessage.length == 0 ? 'login-user-pass' : 'login-user'">
+        <mat-card-header>
+          <mat-card-title>Veröld App</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <img src="../../../assets/home.png" style="width: 120px;"/>
+        </mat-card-content>
+        <mat-card-actions>
+            <mat-form-field appearance="outline"><!--appearance="fill"-->
+                <mat-label>Login</mat-label>
+                <input matInput placeholder="abc123@corp.com" [formControl]="email" (blur)="updateErrorMessage()" required>
+                <mat-error>{{errorMessage}}</mat-error><!--@if (email.invalid) {} only works in Angular-17-->
+            </mat-form-field>  
+            <mat-form-field *ngIf="errorMessage.length == 0" appearance="outline">
+                <mat-label>Enter your password</mat-label>
+                    <input #txtPasswordID matInput [type]="!hide ? 'password' : 'text'" (keyup.enter)="getUserByLogin(txtPasswordID.value)">
+                    <div class="text-box">
+                        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                            <mat-icon>{{!hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        </button>
+                        <button mat-icon-button matSuffix *ngIf="txtPasswordID.value.length >= 3" (click)="getUserByLogin(txtPasswordID.value)">
+                            <mat-icon>login</mat-icon>
+                        </button>
+                    </div>
+                <mat-error>{{loginMessage}}</mat-error>
+            </mat-form-field>
+        </mat-card-actions>
+    </mat-card>
+</div>

@@ -1,0 +1,24 @@
+<div *ngIf="isAuthenticated">
+  <app-layout></app-layout>
+</div>
+<div *ngIf="!isAuthenticated && !setCredentials" class="main-div">
+  <mat-card class="card-content">
+    <mat-card-header>
+      <mat-card-title>Veröld App</mat-card-title>
+      <mat-card-subtitle>Forbidden Access</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <img src="../assets/forbbiden-access.svg"/>
+      <mat-divider></mat-divider>
+    </mat-card-content>
+    <mat-card-actions>
+      <a mat-raised-button class="link-button" style="width: 110px;" [routerLink]="'/login'" (click)="authCredentials();">
+        <span style="margin-left: -20px;">Login</span>
+        <mat-icon style="margin:7px -40px;float:left;" [ngStyle]="{'color': '#005487'}">passkey</mat-icon>
+      </a>
+    </mat-card-actions>
+  </mat-card>
+</div>
+<div *ngIf="setCredentials">
+  <app-login></app-login>
+</div>
