@@ -25,7 +25,7 @@ Prerequisites:
 * Open the VS solution to load up both projects but change the startup project to target the "Web.Api" only and remember to update the appsettings.json schema with your server settings like Server name, Catalog, User and password, there is using my local database and the app won't work if you don't change that which is pretty obvious but just wanted to point it out. 
 ![image](https://github.com/jassohektor/Angular-Starter-NET-API/assets/168608755/71143b18-ffc8-4ef1-b8b5-e69e765fa959)
 
-* Open your CMD or use VSCode terminal to run next commands:
+* Open your CMD or use VSCode terminal to run next commands:<br>
   1- **npm install**<br>
   2- **ng serve**<br>
 ![image](https://github.com/jassohektor/Angular-Starter-NET-API/assets/168608755/386f065b-05f6-45eb-93c1-ba63366e58ea)
@@ -36,7 +36,7 @@ Prerequisites:
 * Enter credentials from the records manually inserted in the SQL script, type in the user and password to get access. 
 ![image](https://github.com/jassohektor/Angular-Starter-NET-API/assets/168608755/67080ea6-43ae-4bb9-921b-a84cf79c0b9a)
 
-
+* Here in the angular-material form the logic is a bit tricky because the UI shows up the password value only when the logged user match the selected record in the active session but once the app gets refreshed or a different route is open that information get lost and you will find the password field value empty, however the record can be updated without any issue but this needs to be improved to get rid of that feature once JWT has been introduced to handle security and timeout session. We don't want to hold up any sensitive data right? anyways the reason that field comes empty is due the SHA2_512 bytes that cannot be decrypted.
 ![image](https://github.com/jassohektor/Angular-Starter-NET-API/assets/168608755/0f00bdd9-c753-4b3d-8eef-b1ededd6869e)
 
 
