@@ -39,7 +39,7 @@ Prerequisites:
 * Here in the angular-material form the logic is a bit tricky because the UI shows up the password value only when the logged user match the selected record in the active session but once the app gets refreshed or a different route is open that information get lost and you will find the password field value empty, however the record can be updated without any issue but this needs to be improved to get rid of that feature once JWT has been introduced to handle security and timeout session. We don't want to hold up any sensitive data right? anyways the reason that field comes empty is due the SHA2_512 bytes that cannot be decrypted.
 ![image](https://github.com/jassohektor/Angular-Starter-NET-API/assets/168608755/0f00bdd9-c753-4b3d-8eef-b1ededd6869e)
 
-
+* The app can easily create, read, update or delete records by subscribing to observable methods located in the data.service in charge to perform http requests to call the web API.
 ![image](https://github.com/jassohektor/Angular-Starter-NET-API/assets/168608755/4ec7ab22-b9d7-4d1f-8629-6b007448f647)
 
 
