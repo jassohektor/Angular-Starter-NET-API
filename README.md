@@ -25,10 +25,12 @@ Prerequisites:
 * Open the VS solution to load up both projects but change the startup project to target the "Web.Api" only and remember to update the appsettings.json schema with your server settings like Server name, Catalog, User and password, there is using my local database and the app won't work if you don't change that which is pretty obvious but just wanted to point it out. 
 ![image](https://github.com/jassohektor/Angular-Starter-NET-API/assets/168608755/71143b18-ffc8-4ef1-b8b5-e69e765fa959)
 
-* 
+* Open you CMD or use VSCode terminal to run next commands:
+  1- **npm install**
+  2- **ng serve**
 ![image](https://github.com/jassohektor/Angular-Starter-NET-API/assets/168608755/386f065b-05f6-45eb-93c1-ba63366e58ea)
 
-
+*
 ![image](https://github.com/jassohektor/Angular-Starter-NET-API/assets/168608755/5b04d9f8-4cf5-4ba2-a71f-1f7c77808df8)
 
 
