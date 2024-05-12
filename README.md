@@ -53,7 +53,7 @@ This project is an Angular Starter with .NET REST API &amp; SQL-DB which include
   Notes
 </p>
 This repository covers what you may call a fullstack development to get started with your own project on both the frontend and backend scenarios, however if you take a look to the code, architecture and design you will found a pretty singular way to handle some features to get expected results and how I come up with some nice ideas to give shape and logic to tricky actions users have to interact with. At the end of the day we are creative souls always pushing forward to the future along with new technologies coming out every year and new ways to implement solutions to real life needs.
-
+<br>
 <br>
 <p align="center" style="font-weight: bolder;">
   Fun fact and a bit of gossip
