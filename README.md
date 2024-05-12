@@ -11,9 +11,9 @@ Prerequisites:
 - NET Core >= 3
 
 -------------------------------------------------------------------
-Visual Studio Community 2019 or later! <br> 
-SQLServer 2016 or later! <br>
-VSCode to run in Terminal (optional) you can use CMD as well.
+ Visual Studio Community 2019 or later! <br> 
+ SQLServer 2019 or later! <br>
+ VSCode to run in Terminal (optional) you can use CMD as well.
 -------------------------------------------------------------------
 
  
