@@ -209,7 +209,7 @@ INSERT INTO [User]--password: HASHBYTES('SHA2_512', 'password') OR CONVERT(BINAR
 SELECT NEWID(), NULL,'Hector','Jasso', 'Creative Artist', 'Full-stack developer', 'jasso.hektor@gmail.com', 
 '713-2569','Kópavogur, Iceland', 201,'M', HASHBYTES('SHA2_512', 'password'), NULL, GETDATE(), @PhotoUrl,1987,'', GETDATE(), NULL, NEWID(), 1
 UNION
-SELECT NEWID(), NULL,'Ania','Frąckiewicz', 'HR Specialist', 'Senior Talent Consultant', 'anna@geko.is', 
+SELECT NEWID(), NULL,'Ásta','Kristín', 'HR-Specialist', 'Senior Talent Consultant', 'asta@tech.is', 
 '713-0851','Reykjavík, Iceland', 218,'F', HASHBYTES('SHA2_512', 'password'), NULL, GETDATE(), @PhotoUrl2,1992,'', GETDATE(), NULL, NEWID(), 1
 GO
 
