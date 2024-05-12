@@ -1,6 +1,3 @@
-USE[DBVeröld]
-GO
-
 IF OBJECT_ID ('dbo.Event') IS NOT NULL
    DROP TABLE dbo.Event;
 GO
