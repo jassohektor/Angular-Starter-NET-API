@@ -28,8 +28,6 @@ Angular Starter with NET REST API &amp; SQL-DB (includes angular material, ngx-g
 ![image](https://github.com/jassohektor/Angular-Starter-NET-API/assets/168608755/fbf9d44b-7031-4bca-aab0-63032a56bdee)
 
 
-![image](https://github.com/jassohektor/Angular-Starter-NET-API/assets/168608755/52cdb647-a825-459d-ad26-f2659bf6a31e)
-
-
+![image](https://github.com/jassohektor/Angular-Starter-NET-API/assets/168608755/4822acab-34be-4feb-b6c1-4336fd44ba4b)
 
 
