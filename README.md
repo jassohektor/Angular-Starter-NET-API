@@ -1,10 +1,10 @@
-<h1>
-  # Angular-Starter-NET-API-SQLDB
-</h1>
+<p align="center" style="font-weight: bolder;">
+  <h1>Angular Starter with .NET REST API & SQL Database</h1>
+</p>
 
 This project is an Angular Starter with .NET REST API &amp; SQL-DB which includes angular material, ngx-gallery and CRUD operations. I made this project in the year 2020 but has been updated recently and contains everything you need to run an Angular application and connect UI actions to a REST Web-API in charge to handle http requests operations and store data into a SQL database using entity relational model, can't say is perfect because I wanted to invest more time to implement security with JWT and interceptors using route Guards, some API pattern like UnitOfWork and DB indexing but I'm pretty sure everything done is based on best SOLID practices. 
 
-Prerequisites:
+**Prerequisites:**
 - Node: >=12.11.6
 - Angular CLI >= 9.0.5
 - Typescript: ^3.6.4
@@ -49,8 +49,15 @@ Prerequisites:
 ![image](https://github.com/jassohektor/Angular-Starter-NET-API/assets/168608755/4822acab-34be-4feb-b6c1-4336fd44ba4b)
 
 
-**Notes**<br>
+<p align="center" style="font-weight: bolder;">
+  Notes
+</p>
+<br>
 This repository covers what you may call a fullstack development to get started with your own project on both the frontend and backend scenarios, however if you take a look to the code, architecture and design you will found a pretty singular way to handle some features to get expected results and how I come up with some nice ideas to give shape and logic to tricky actions users have to interact with. At the end of the day we are creative souls always pushing forward to the future along with new technologies coming out every year and new ways to implement solutions to real life needs.
 
-**Fun fact and a bit of gossip**<br>
+
+<p align="center" style="font-weight: bolder;">
+  Fun fact and a bit of gossip
+</p>
+<br>
 Is funny that in my current job I had to take over a project made by a team from India and they grabbed such starter project from a hackathon event back in the day and feels kind of strange because they got fired due the lack of understanding the scope of the project with client needs and also how to provide good results to the business model which is pretty specific when it comes to create design and logic to scale backend workloads across multiple services. The client was very disappointed after fire other 2 teams and some "senior" developers until I came to the rescue and I have almost 5 years working here since then!
