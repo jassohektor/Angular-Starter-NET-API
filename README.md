@@ -1,6 +1,6 @@
-<div style="text-align:center;width:100%;">
+<h1>
   # Angular-Starter-NET-API-SQLDB
-</div>
+</h1>
 
 Angular Starter with NET REST API &amp; SQL-DB (includes angular material, ngx-gallery and CRUD operations)
 
