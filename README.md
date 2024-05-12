@@ -42,10 +42,15 @@ Prerequisites:
 * The app can easily create, read, update or delete records by subscribing to observable methods located in the data.service in charge to perform http requests to call the web API.
 ![image](https://github.com/jassohektor/Angular-Starter-NET-API/assets/168608755/4ec7ab22-b9d7-4d1f-8629-6b007448f647)
 
-
+* Let's say you don't want to waste money on cloud services or getting a server from third party companies, well you can still test your feature to store images and see the results.
 ![image](https://github.com/jassohektor/Angular-Starter-NET-API/assets/168608755/fbf9d44b-7031-4bca-aab0-63032a56bdee)
 
-
+* Unfortunately we have to press [CTRL + S] directly to our code no matter if you didin't do any change because helps to compile the application upon file saves and reload the browser with the newly compiled application and all new changes including stored files, obviously I did it this way to test out results but once getting Azure or AWS services we can store files on the cloud to scale things up.
 ![image](https://github.com/jassohektor/Angular-Starter-NET-API/assets/168608755/4822acab-34be-4feb-b6c1-4336fd44ba4b)
 
 
+**Notes**
+This repository covers what you may call a fullstack development to get started with your own project on both the frontend and backend scenarios, however if you take a look to the code, architecture and design you will found a pretty singular way to handle some features to get expected results and how I come up with some nice ideas to give shape and logic to tricky actions users have to interact with. At the end of the day we are creative souls always pushing forward to the future along with new technologies coming out every year and new ways to implement solutions to real life needs.
+
+**Fun Fact and a bit of gossip**
+Is a bit funny that in my current job I had to take over a project made by a team from India and they grabbed such starter project from a hackathon event back in the day and feels kind of strange because they got fired due the lack of understanding the scope of the project with client needs and also how to provide good results to the business model which is pretty specific when it comes to create design and logic to scale backend workloads across multiple services. The client was very disappointed after fire other 2 teams and some "senior" developers until I came to the rescue and I have almost 5 years working here since then!
