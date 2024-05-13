@@ -30,7 +30,7 @@ This project is an Angular Starter with .NET REST API &amp; SQL-DB which include
   2- **ng serve**<br>
 ![image](https://github.com/jassohektor/Angular-Starter-NET-API/assets/168608755/386f065b-05f6-45eb-93c1-ba63366e58ea)
 
-* Go to your preferred browser and type localhost:4200 to display the app running and watch some coded SVG animations while you get logged in!.
+* Go to your preferred browser and type localhost:4200 to display the app running and enjoy watching some coded SVG animations while you get logged in!.
 ![image](https://github.com/jassohektor/Angular-Starter-NET-API/assets/168608755/5b04d9f8-4cf5-4ba2-a71f-1f7c77808df8)
 
 * Enter credentials from one of the records inserted in dbo table [user] generated with the SQL script, type in the user and password to get access. 
