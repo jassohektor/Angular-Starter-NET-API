@@ -33,7 +33,7 @@ This project is an Angular Starter with .NET REST API &amp; SQL-DB which include
 * Go to your preferred browser and type localhost:4200 to display the app running and watch some coded SVG animations while you get logged in!.
 ![image](https://github.com/jassohektor/Angular-Starter-NET-API/assets/168608755/5b04d9f8-4cf5-4ba2-a71f-1f7c77808df8)
 
-* Enter credentials from records inserted in database with the SQL script, type in the user and password to get access. 
+* Enter credentials from records inserted in database with the SQL script, type in the user & password to get access. 
 ![image](https://github.com/jassohektor/Angular-Starter-NET-API/assets/168608755/67080ea6-43ae-4bb9-921b-a84cf79c0b9a)
 
 * Here in the angular-material form the logic is a bit tricky because the UI shows up the password value only when the logged user match the selected record in the active session but once the app gets refreshed or a different route is open that information get lost and you will find the password field value empty, however the record can be updated without any issue but this needs to be improved to get rid of that feature once JWT has been introduced to handle security and timeout session. We don't want to hold up any sensitive data right? anyways the reason that field comes empty is due the SHA2_512 bytes that cannot be decrypted.
